@@ -1,5 +1,4 @@
 package com.envy.asthmatracker;
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,10 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,10 +18,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
-
-
     TextView tvMain;
-
     //
     // On CREATE
     //
@@ -33,13 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (savedInstanceState == null) {
-            Toast.makeText(this, "Welcome back!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,  "Welcome back!", Toast.LENGTH_SHORT).show();
         }
         final Button button = findViewById(R.id.mainbutton1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.i("vlogs", "App Created ");
                 Intent intent1 = new Intent(MainActivity.this, ExaberationsActivity.class);
                 startActivity(intent1);
             }
@@ -58,6 +51,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LatestResearch.class));
+            }
+        });
+
+        Button testButton = findViewById(R.id.buttonTest);
+        testButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, MainActivityCompose.class);
+                startActivity(i);
             }
         });
 
