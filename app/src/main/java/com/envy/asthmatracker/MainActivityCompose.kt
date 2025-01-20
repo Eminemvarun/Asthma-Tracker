@@ -31,10 +31,9 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import kotlin.math.abs
 
-class MainActivityCompose : AppCompatActivity() {
+    class MainActivityCompose : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         // Set Content
         setContent {
             MainActivityContent(this)
